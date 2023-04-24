@@ -25,7 +25,9 @@
 </div>
 
 <div class="centertwo">
-    <a href="${pageContext.request.contextPath}/login.jsp">Logout</a>
+    <form action="${pageContext.request.contextPath}/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
 </div>
 
 
