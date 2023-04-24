@@ -10,7 +10,7 @@ import java.io.IOException;
 
 //@WebFilter(filterName = "AuthFilter")
 public class AuthFilter implements Filter {
-    public void init(FilterConfig config) throws ServletException {
+   public void init(FilterConfig config) throws ServletException {
     }
 
     public void destroy() {
@@ -18,10 +18,14 @@ public class AuthFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+            throws ServletException, IOException {
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse res = (HttpServletResponse) response;
 
+        HttpSession session = req.getSession(false);
+
+    if (session != null){
         //Check for session cookie
         Cookie[] cookies = req.getCookies();
         boolean authenticated = false;
@@ -29,13 +33,11 @@ public class AuthFilter implements Filter {
         if (cookies != null){
             for (Cookie cookie : cookies){
                 if (cookie.getName().equals("JSESSIONID")){
-                    HttpSession session = req.getSession(false);
-                    if ((session != null) && (session.getId().equals(cookie.getValue()))){
+                    if (session.getId().equals(cookie.getValue())){
                         //session is valid, user is authenticated
                         authenticated = true;
                     }else {
                         String modifiedCookie = cookie.getValue().substring(0, cookie.getValue().length() -6);
-                        assert session != null;
                         if (session.getId().equals(modifiedCookie)) authenticated = true;
                     }
                 }
@@ -45,6 +47,9 @@ public class AuthFilter implements Filter {
         if (authenticated){
             chain.doFilter(request, response);
         }else {
+            res.sendRedirect(req.getContextPath() + "/login");
+        }
+    }else {
             res.sendRedirect(req.getContextPath() + "/login");
         }
     }
