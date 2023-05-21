@@ -1,7 +1,6 @@
 package gr.aueb.cf.schoolapp.controller;
 
 import javax.servlet.*;
-import javax.servlet.annotation.*;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +36,10 @@ public class AuthFilter implements Filter {
                         //session is valid, user is authenticated
                         authenticated = true;
                     }else {
+                        /*
+                         *Jetty embedded web server adds 6 chars at cookie so remove them
+                         * in order to check it
+                         */
                         String modifiedCookie = cookie.getValue().substring(0, cookie.getValue().length() -6);
                         if (session.getId().equals(modifiedCookie)) authenticated = true;
                     }

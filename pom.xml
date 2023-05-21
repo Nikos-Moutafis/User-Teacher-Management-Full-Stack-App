@@ -39,18 +39,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>  
-            <groupId>org.apache.commons</groupId>    
-            <artifactId>commons-dbcp2</artifactId>    
-            <version>2.9.0</version>
-        </dependency>
-          
-        <dependency>
-            <groupId>javax.servlet</groupId>    
-            <artifactId>jstl</artifactId>    
-            <version>1.2</version>
-        </dependency>
-        
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
         <dependency>    
             <groupId>org.apache.commons</groupId>
@@ -91,7 +79,7 @@
                 <version>10.0.11</version>
                 <configuration>
                     <webApp>
-                        <contextPath>/mywebapp</contextPath>
+                        <contextPath>/</contextPath>
                     </webApp>
                 </configuration>
             </plugin>

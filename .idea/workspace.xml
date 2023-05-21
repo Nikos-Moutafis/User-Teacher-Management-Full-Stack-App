@@ -9,9 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa1d6df-70ed-4cf3-9956-a62e705bcae1" name="Changes" comment="set session to false in login.jsp and index.jsp">
+    <list default="true" id="2fa1d6df-70ed-4cf3-9956-a62e705bcae1" name="Changes" comment="added config for jetty server">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/aueb/cf/schoolapp/controller/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/aueb/cf/schoolapp/controller/AuthFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gr/aueb/cf/schoolapp/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/aueb/cf/schoolapp/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gr/aueb/cf/schoolapp/service/util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gr/aueb/cf/schoolapp/service/util/DBUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +225,7 @@
       <workItem from="1679225287988" duration="669000" />
       <workItem from="1679231067792" duration="1259000" />
       <workItem from="1679259530088" duration="1268000" />
-      <workItem from="1684679935960" duration="1474000" />
+      <workItem from="1684679935960" duration="4334000" />
     </task>
     <task id="LOCAL-00001" summary="set session to false in login.jsp and index.jsp">
       <created>1684680342718</created>
@@ -231,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684680342718</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added javadocs to LoginController">
+      <created>1684681439807</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684681439807</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +249,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="set session to false in login.jsp and index.jsp" />
-    <option name="LAST_COMMIT_MESSAGE" value="set session to false in login.jsp and index.jsp" />
+    <MESSAGE value="added javadocs to LoginController" />
+    <MESSAGE value="added config for jetty server" />
+    <option name="LAST_COMMIT_MESSAGE" value="added config for jetty server" />
   </component>
 </project>
