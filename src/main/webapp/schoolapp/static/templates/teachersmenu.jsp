@@ -45,7 +45,11 @@
     </div>
   </div>
 
-  <li><a href="${pageContext.request.contextPath}/login.jsp">Logout</a></li>
+  <li>   
+    <form action="${pageContext.request.contextPath}/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+  </li>
 
   <div class="center">
     <c:if test="${requestScope.isError}">
