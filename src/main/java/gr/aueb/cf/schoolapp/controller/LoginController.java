@@ -34,11 +34,24 @@ public class LoginController extends HttpServlet {
             throw new RuntimeException(e);
         }
 
+        /*
+         *If user is not authenticated then authentication provider
+         * returns null, then redirect user to login
+         */
         if (user == null){
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
 
+        /*
+         * If user is authenticated(not null), create a new session
+         * Set a max active period of 15 minutes to session
+         *  Create a new cookie  and assign to it an id
+         * and max age(equal to session max active period)
+         * Add cookie to the response
+         * and then redirect user to menu
+         * depending on his role (admin or user)
+         */
         HttpSession session = request.getSession(true);
         session.setAttribute("username",user.getUsername());
 
